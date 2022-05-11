@@ -5,21 +5,17 @@ using System.Threading;
 using System.Threading.Tasks;
 using Template.Contexts.Shared.Factories;
 using Juce.Core.Loading;
-using Template.Contexts.LoadingScreen;
+using Template.Contents.Shared.Logging;
 
 namespace Template.Bootstraps
 {
-    public class StageBootstrap : Bootstrap
+    public sealed class StageBootstrap : Bootstrap
     {
         protected override async Task Run(CancellationToken cancellationToken)
         {
-            await ContextFactories.Services.Create();
-            ITaskDisposable<ILoadingScreenContextInteractor> loadingScreen = await ContextFactories.LoadingScreen.Create();
+            ITaskLoadingToken taskLoadingToken = await SharedBootstrap.LoadCore(cancellationToken);
 
-            ITaskLoadingToken taskLoadingToken = await loadingScreen.Value.Show(cancellationToken);
-
-            await ContextFactories.Cameras.Create();
-            await ContextFactories.Meta.Create();
+            SharedLoggers.BootstrapLogger.Log("Loading stage context");
 
             ITaskDisposable<IStageContextInteractor> stageContext = await ContextFactories.Stage.Create();
 

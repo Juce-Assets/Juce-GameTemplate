@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Template.Content.LoadingScreen.LoadingScreenUi.UseCases.SetVisible
+namespace Template.Contents.LoadingScreen.LoadingScreenUi.UseCases.SetVisible
 {
     public sealed class SetVisibleUseCase : ISetVisibleUseCase
     {

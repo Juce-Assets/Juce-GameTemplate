@@ -3,7 +3,7 @@ using Juce.CoreUnity.ViewStack.Entries;
 using System;
 using UnityEngine;
 
-namespace Template.Content.Meta.SplashScreenUi.ViewStack
+namespace Template.Contents.Meta.SplashScreenUi.ViewStack
 {
     public sealed class SplashScreenUiViewStackEntry : ViewStackEntry
     {

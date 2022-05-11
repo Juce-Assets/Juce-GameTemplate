@@ -5,23 +5,24 @@ using System.Threading.Tasks;
 using Template.Contexts.Shared.Factories;
 using Template.Contexts.LoadingScreen;
 using Juce.Core.Loading;
-using Template.Content.Meta.SplashScreenUi.Interactor;
+using Template.Contents.Meta.SplashScreenUi.Interactor;
 using Juce.CoreUnity.Service;
 using Juce.CoreUnity.ViewStack.Services;
+using Template.Contents.Shared.Logging;
 
 namespace Template.Bootstraps
 {
-    public class MainBootstrap : Bootstrap
+    public sealed class MainBootstrap : Bootstrap
     {
         protected override async Task Run(CancellationToken cancellationToken)
         {
-            await ContextFactories.Services.Create();
-            ITaskDisposable<ILoadingScreenContextInteractor> loadingScreen = await ContextFactories.LoadingScreen.Create();
+            ITaskLoadingToken taskLoadingToken = await SharedBootstrap.LoadCore(cancellationToken);
 
-            ITaskLoadingToken taskLoadingToken = await loadingScreen.Value.Show(cancellationToken);
+            SharedLoggers.BootstrapLogger.Log("Loading meta context");
 
-            await ContextFactories.Cameras.Create();
             await ContextFactories.Meta.Create();
+
+            SharedLoggers.BootstrapLogger.Log("Starting game");
 
             IUiViewStackService uiViewStackService = ServiceLocator.Get<IUiViewStackService>();
 

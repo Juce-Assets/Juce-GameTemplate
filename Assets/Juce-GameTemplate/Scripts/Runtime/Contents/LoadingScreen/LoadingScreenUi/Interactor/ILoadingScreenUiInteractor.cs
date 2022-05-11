@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace Template.Content.LoadingScreen.LoadingScreenUi.Interactor
+namespace Template.Contents.LoadingScreen.LoadingScreenUi.Interactor
 {
     public interface ILoadingScreenUiInteractor
     {

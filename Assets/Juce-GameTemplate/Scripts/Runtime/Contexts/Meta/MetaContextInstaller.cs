@@ -1,5 +1,6 @@
 ﻿using Juce.Core.Di.Builder;
 using Juce.CoreUnity.Contexts;
+using Template.Contents.Meta.Cheats.Installers;
 using Template.Contents.Stage.General.Installers;
 
 namespace Template.Contexts.Meta
@@ -9,6 +10,8 @@ namespace Template.Contexts.Meta
         public void Install(IDiContainerBuilder container, MetaContextInstance context)
         {
             container.InstallServices();
+
+            container.InstallCheats();
 
             container.Bind(context.SplashScreenUiInstaller);
 

@@ -6,6 +6,7 @@
     "com.juce.scenemanagement": "git+https://github.com/Juce-Assets/Juce-SceneManagement",
     "com.juce.tween": "git+https://github.com/Juce-Assets/Juce-Tween",
     "com.juce.tweencomponent": "git+https://github.com/Juce-Assets/Juce-TweenPlayer",
+    "com.juce.cheats": "git+https://github.com/Juce-Assets/Juce-Cheats",
     "com.juce.utils": "git+https://github.com/Juce-Assets/Juce-Utils",
     "com.unity.2d.animation": "5.2.0",
     "com.unity.2d.pixel-perfect": "4.0.1",

@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Template.Content.LoadingScreen.LoadingScreenUi.UseCases.SetVisible;
+using Template.Contents.LoadingScreen.LoadingScreenUi.UseCases.SetVisible;
 
-namespace Template.Content.LoadingScreen.LoadingScreenUi.Interactor
+namespace Template.Contents.LoadingScreen.LoadingScreenUi.Interactor
 {
     public sealed class LoadingScreenUiInteractor : ILoadingScreenUiInteractor
     {

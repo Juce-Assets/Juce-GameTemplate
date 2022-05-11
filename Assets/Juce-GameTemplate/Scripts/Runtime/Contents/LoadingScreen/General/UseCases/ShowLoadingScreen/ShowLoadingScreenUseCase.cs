@@ -2,9 +2,9 @@
 using Juce.CoreUnity.ViewStack.Services;
 using System.Threading;
 using System.Threading.Tasks;
-using Template.Content.LoadingScreen.LoadingScreenUi.Interactor;
+using Template.Contents.LoadingScreen.LoadingScreenUi.Interactor;
 
-namespace Template.Content.LoadingScreen.General.UseCases.ShowLoadingScreen
+namespace Template.Contents.LoadingScreen.General.UseCases.ShowLoadingScreen
 {
     public class ShowLoadingScreenUseCase : IShowLoadingScreenUseCase
     {

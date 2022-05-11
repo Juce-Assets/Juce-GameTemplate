@@ -1,5 +1,5 @@
 ﻿using Juce.Core.Di.Installers;
-using Template.Content.Meta.SplashScreenUi.Installers;
+using Template.Contents.Meta.SplashScreenUi.Installers;
 using UnityEngine;
 
 namespace Template.Contexts.Meta

@@ -1,4 +1,4 @@
-﻿using Template.Content.LoadingScreen.General.UseCases.ShowLoadingScreen;
+﻿using Template.Contents.LoadingScreen.General.UseCases.ShowLoadingScreen;
 using Juce.Core.Loading;
 using System.Threading;
 using System.Threading.Tasks;

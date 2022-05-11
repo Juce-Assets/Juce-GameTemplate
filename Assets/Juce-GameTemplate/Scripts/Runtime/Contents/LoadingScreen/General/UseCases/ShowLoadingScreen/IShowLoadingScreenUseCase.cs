@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Template.Content.LoadingScreen.General.UseCases.ShowLoadingScreen
+namespace Template.Contents.LoadingScreen.General.UseCases.ShowLoadingScreen
 {
     public interface IShowLoadingScreenUseCase
     {

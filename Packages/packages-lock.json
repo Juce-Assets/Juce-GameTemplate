@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.juce.cheats": {
+      "version": "git+https://github.com/Juce-Assets/Juce-Cheats",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "23deafec54732c7de41283e78919c25a32eb2b41"
+    },
     "com.juce.core": {
       "version": "git+https://github.com/Juce-Assets/Juce-Core",
       "depth": 0,

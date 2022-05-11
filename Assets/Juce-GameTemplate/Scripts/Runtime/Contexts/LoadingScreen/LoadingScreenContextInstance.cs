@@ -1,5 +1,5 @@
 ﻿using Juce.Core.Di.Installers;
-using Template.Content.LoadingScreen.LoadingScreenUi.Installers;
+using Template.Contents.LoadingScreen.LoadingScreenUi.Installers;
 using UnityEngine;
 
 namespace Template.Contexts.LoadingScreen

@@ -3,11 +3,11 @@ using Juce.Core.Di.Installers;
 using Juce.CoreUnity.TweenComponent;
 using Juce.CoreUnity.Visibles;
 using JuceUnity.Core.Di.Extensions;
-using Template.Content.Meta.SplashScreenUi.Interactor;
-using Template.Content.Meta.SplashScreenUi.ViewStack;
+using Template.Contents.Meta.SplashScreenUi.Interactor;
+using Template.Contents.Meta.SplashScreenUi.ViewStack;
 using UnityEngine;
 
-namespace Template.Content.Meta.SplashScreenUi.Installers
+namespace Template.Contents.Meta.SplashScreenUi.Installers
 {
     public class SplashScreenUiInstaller : MonoBehaviour, IInstaller
     {

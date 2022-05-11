@@ -2,10 +2,10 @@
 using Juce.Core.Di.Builder;
 using Juce.Core.Di.Installers;
 using Juce.TweenComponent;
-using Template.Content.LoadingScreen.LoadingScreenUi.UseCases.SetVisible;
-using Template.Content.LoadingScreen.LoadingScreenUi.Interactor;
+using Template.Contents.LoadingScreen.LoadingScreenUi.UseCases.SetVisible;
+using Template.Contents.LoadingScreen.LoadingScreenUi.Interactor;
 
-namespace Template.Content.LoadingScreen.LoadingScreenUi.Installers
+namespace Template.Contents.LoadingScreen.LoadingScreenUi.Installers
 {
     public class LoadingScreenUiInstaller : MonoBehaviour, IInstaller
     {
