@@ -7,12 +7,14 @@ namespace Template.Contents.Shared.Logging
     public static class SharedLoggers
     {
         public static ILogger BootstrapLogger { get; }
+        public static ILogger ServicesLogger { get; }
         public static ILogger MetaLogger { get; }
         public static ILogger StageLogger { get; }
 
         static SharedLoggers()
         {
             BootstrapLogger = CreateLogger("Bootstrap");
+            ServicesLogger = CreateLogger("Services");
             MetaLogger = CreateLogger("Meta");
             StageLogger = CreateLogger("Stage");
         }

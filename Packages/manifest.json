@@ -9,7 +9,7 @@
     "com.juce.tweencomponent": "git+https://github.com/Juce-Assets/Juce-TweenPlayer",
     "com.juce.cheats": "git+https://github.com/Juce-Assets/Juce-Cheats",
     "com.juce.persistence": "git+https://github.com/Juce-Assets/Juce-Persistence#1.0.3",
-    "com.juce.loc": "git+https://github.com/Juce-Assets/Juce-Loc#0.0.2",
+    "com.juce.loc": "git+https://github.com/Juce-Assets/Juce-Loc#0.0.3",
     "com.unity.nuget.newtonsoft-json": "3.0.1",
     "com.unity.2d.animation": "5.2.0",
     "com.unity.2d.pixel-perfect": "4.0.1",

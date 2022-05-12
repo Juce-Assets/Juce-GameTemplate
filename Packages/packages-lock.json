@@ -31,11 +31,11 @@
       "hash": "3e144bd4324bc448ad916c5c84e4d78477e9000c"
     },
     "com.juce.loc": {
-      "version": "git+https://github.com/Juce-Assets/Juce-Loc#0.0.2",
+      "version": "git+https://github.com/Juce-Assets/Juce-Loc#0.0.3",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6c9a1fe4a0cdc9e1e05dc4521f800459cece2633"
+      "hash": "633d0160f986ab8760286f0c07a159f27b3fce3b"
     },
     "com.juce.persistence": {
       "version": "git+https://github.com/Juce-Assets/Juce-Persistence#1.0.3",
