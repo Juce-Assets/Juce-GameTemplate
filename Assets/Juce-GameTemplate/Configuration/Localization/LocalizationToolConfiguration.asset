@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: LocalizationToolConfiguration
   m_EditorClassIdentifier: 
   spreadsheetKey: 1nKNKkpRMvROFute5s8MPnj5Xe5B_AENCd1ZsoK-a11Q
-  credentialsJsonAssetsPath: Juce-GameTemplate/StreamingAssets/driveapi-256200-95604659756d.json
+  credentialsJsonPath: C:\Users\guill\Desktop\Folders\DriveApi\driveapi-256200-95604659756d.json
   tidsColumn: 0
   languagesStartingColumn: 1
   languageNamesRow: 0

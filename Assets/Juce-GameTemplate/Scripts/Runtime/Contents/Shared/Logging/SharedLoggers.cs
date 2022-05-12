@@ -1,4 +1,5 @@
 ﻿using Juce.Core.Logging;
+using Juce.CoreUnity;
 using Juce.CoreUnity.Logging;
 
 namespace Template.Contents.Shared.Logging
@@ -18,7 +19,7 @@ namespace Template.Contents.Shared.Logging
 
         private static ILogger CreateLogger(string owner)
         {
-            if (UnityEngine.Application.isEditor || UnityEngine.Debug.isDebugBuild)
+            if (JuceAppliaction.IsDebug)
             {
                 return new Logger(new OwnedUnityLoggerOutput(new LoggerOwner(owner)));
             }

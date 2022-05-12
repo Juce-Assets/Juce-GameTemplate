@@ -1,6 +1,7 @@
 ﻿using Juce.CoreUnity.Contexts;
 
 using Template.Contexts.Cameras;
+using Template.Contexts.Debug;
 using Template.Contexts.LoadingScreen;
 using Template.Contexts.Meta;
 using Template.Contexts.Services;
@@ -10,6 +11,7 @@ namespace Template.Contexts.Shared.Factories
 {
     public static class ContextFactories 
     {
+        public static IContextFactory<IDebugContextInteractor, DebugContextInstance> Debug { get; }
         public static IContextFactory<IServicesContextInteractor, ServicesContextInstance> Services { get; }
         public static IContextFactory<ICamerasContextInteractor, CamerasContextInstance> Cameras { get; }
         public static IContextFactory<ILoadingScreenContextInteractor, LoadingScreenContextInstance> LoadingScreen { get; }
@@ -18,7 +20,12 @@ namespace Template.Contexts.Shared.Factories
 
         static ContextFactories()
         {
-             Services = new ContextFactory<IServicesContextInteractor, ServicesContextInstance>(
+            Debug = new ContextFactory<IDebugContextInteractor, DebugContextInstance>(
+                "DebugContext",
+                new DebugContextInstaller()
+                );
+
+            Services = new ContextFactory<IServicesContextInteractor, ServicesContextInstance>(
                 "ServicesContext",
                 new ServicesContextInstaller()
                 );

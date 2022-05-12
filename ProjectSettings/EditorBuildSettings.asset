@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Juce-GameTemplate/Scenes/Bootstraps/MainBootstrap.unity
+    guid: 8f66319fa0edaf247bdb67dc0ef515b0
+  - enabled: 1
     path: Assets/Juce-GameTemplate/Scenes/Bootstraps/StageBootstrap.unity
     guid: 4cf2b7ffd680e2c42ba87137b7f0ec17
+  - enabled: 1
+    path: Assets/Juce-GameTemplate/Scenes/Contexts/DebugContext.unity
+    guid: c644781e24ea8f74fbef1aad9bdb97bd
   - enabled: 1
     path: Assets/Juce-GameTemplate/Scenes/Contexts/ServicesContext.unity
     guid: 5e434e56019d539489ecf2439e91cf7a
