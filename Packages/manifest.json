@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.juce.utils": "git+https://github.com/Juce-Assets/Juce-Utils",
     "com.juce.core": "git+https://github.com/Juce-Assets/Juce-Core",
     "com.juce.coreunity": "git+https://github.com/Juce-Assets/Juce-CoreUnity",
     "com.juce.input": "git+https://github.com/Juce-Assets/Juce-Input",
@@ -7,7 +8,8 @@
     "com.juce.tween": "git+https://github.com/Juce-Assets/Juce-Tween",
     "com.juce.tweencomponent": "git+https://github.com/Juce-Assets/Juce-TweenPlayer",
     "com.juce.cheats": "git+https://github.com/Juce-Assets/Juce-Cheats",
-    "com.juce.utils": "git+https://github.com/Juce-Assets/Juce-Utils",
+    "com.juce.loc": "git+https://github.com/Juce-Assets/Juce-Loc#0.0.2",
+    "com.unity.nuget.newtonsoft-json": "3.0.1",
     "com.unity.2d.animation": "5.2.0",
     "com.unity.2d.pixel-perfect": "4.0.1",
     "com.unity.2d.psdimporter": "4.3.0",
