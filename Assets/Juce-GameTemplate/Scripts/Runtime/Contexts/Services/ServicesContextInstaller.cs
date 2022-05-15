@@ -7,6 +7,7 @@ using Juce.Loc.Services;
 using JuceUnity.Core.DI.Extensions;
 using Template.Contents.Services.General.Installers;
 using Template.Contents.Services.General.UseCases.LoadServices;
+using Template.Contents.Services.General.UseCases.PreloadServices;
 
 namespace Template.Contexts.Services
 {
@@ -35,6 +36,7 @@ namespace Template.Contexts.Services
             container.InstallGeneral();
 
             container.Bind<IServicesContextInteractor>().FromFunction(c => new ServicesContextInteractor(
+                c.Resolve<IPreloadServicesUseCase>(),
                 c.Resolve<ILoadServicesUseCase>()
                 ));
         }

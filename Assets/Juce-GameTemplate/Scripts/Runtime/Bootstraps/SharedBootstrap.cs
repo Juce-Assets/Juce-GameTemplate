@@ -28,13 +28,15 @@ namespace Template.Bootstraps
 
             ITaskDisposable<IServicesContextInteractor> services = await ContextFactories.Services.Create();
 
-            await services.Value.Load(cancellationToken);
+            await services.Value.Preload(cancellationToken);
 
             SharedLoggers.BootstrapLogger.Log("Loading loading screen context");
 
             ITaskDisposable<ILoadingScreenContextInteractor> loadingScreen = await ContextFactories.LoadingScreen.Create();
 
             ITaskLoadingToken taskLoadingToken = await loadingScreen.Value.Show(cancellationToken);
+
+            await services.Value.Load(cancellationToken);
 
             SharedLoggers.BootstrapLogger.Log("Loading cameras context");
 
