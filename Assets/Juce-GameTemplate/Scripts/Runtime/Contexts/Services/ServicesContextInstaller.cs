@@ -37,7 +37,9 @@ namespace Template.Contexts.Services
             container.Bind<IConfigurationService>()
                 .FromInstance(new ConfigurationService(
                     context.GameConfiguration
-                    ));
+                    ))
+                .ToServicesLocator()
+                .NonLazy();
 
             container.InstallGeneral();
 
