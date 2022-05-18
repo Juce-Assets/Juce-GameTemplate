@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Template.Contents.Services.General.Configuration
+namespace Template.Contents.Shared.Configuration
 {
     [CreateAssetMenu(fileName = nameof(GameConfiguration), 
-        menuName = "Template/Configuration/GameConfiguration", order = 1)]
+        menuName = "Template/Shared/Configuration/GameConfiguration", order = 1)]
     public class GameConfiguration : ScriptableObject
     {
         

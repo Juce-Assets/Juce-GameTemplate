@@ -1,6 +1,6 @@
 ﻿using Juce.CoreUnity.Tickables;
 using Juce.CoreUnity.Ui.Frame;
-using Template.Contents.Services.General.Configuration;
+using Template.Contents.Shared.Configuration;
 using UnityEngine;
 
 namespace Template.Contexts.Services

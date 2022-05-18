@@ -1,4 +1,4 @@
-﻿using Template.Contents.Services.General.Configuration;
+﻿using Template.Contents.Shared.Configuration;
 
 namespace Template.Contents.Services.Configuration.Service
 {
