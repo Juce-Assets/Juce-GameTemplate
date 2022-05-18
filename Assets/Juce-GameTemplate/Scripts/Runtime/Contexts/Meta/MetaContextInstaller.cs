@@ -1,7 +1,7 @@
 ﻿using Juce.Core.Di.Builder;
 using Juce.CoreUnity.Contexts;
 using Template.Contents.Meta.Cheats.Installers;
-using Template.Contents.Stage.General.Installers;
+using Template.Contents.Meta.General.Installers;
 
 namespace Template.Contexts.Meta
 {

@@ -286,6 +286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tickablesService: {fileID: 687149232}
   uiFrame: {fileID: 2081644368}
+  gameConfiguraton: {fileID: 11400000, guid: a7172a76311ed0c49af828a1c842c3c6, type: 2}
 --- !u!1 &1822518799
 GameObject:
   m_ObjectHideFlags: 0
