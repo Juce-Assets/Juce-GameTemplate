@@ -1,4 +1,4 @@
-﻿using Juce.Loc.Services;
+﻿using Juce.CoreUnity.Localization.Services;
 using System.Threading;
 using System.Threading.Tasks;
 using Template.Contents.Shared.Logging;

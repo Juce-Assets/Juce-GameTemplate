@@ -16,6 +16,7 @@ namespace Template.Contents.Services.General.Installers
 
             container.Bind<ILoadServicesUseCase>()
                 .FromFunction(c => new LoadServicesUseCase(
+                    c.Resolve<ILocalizationService>()
                     ));
         }
     }
