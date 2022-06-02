@@ -1,9 +1,8 @@
 ﻿using Juce.Core.Di.Builder;
 using Juce.CoreUnity.Contexts;
+using Juce.CoreUnity.Localization.Services;
 using Juce.CoreUnity.Tickables;
-using Juce.CoreUnity.ViewStack;
 using Juce.CoreUnity.ViewStack.Services;
-using Juce.Loc.Services;
 using JuceUnity.Core.DI.Extensions;
 using Template.Contents.Services.General.Installers;
 using Template.Contents.Services.General.UseCases.LoadServices;

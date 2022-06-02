@@ -1,5 +1,5 @@
 ﻿using Juce.Core.Di.Builder;
-using Juce.Loc.Services;
+using Juce.CoreUnity.Localization.Services;
 using Template.Contents.Services.General.UseCases.LoadServices;
 
 namespace Template.Contents.Services.General.Installers

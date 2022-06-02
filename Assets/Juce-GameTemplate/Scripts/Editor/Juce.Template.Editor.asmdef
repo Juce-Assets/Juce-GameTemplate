@@ -2,7 +2,7 @@
     "name": "Template.Editor",
     "rootNamespace": "Template",
     "references": [
-        "GUID:1a33b5609ac52ac418374bff5770c4c7"
+        "GUID:66f84fddbd56756439bdf88a8207ce7e"
     ],
     "includePlatforms": [
         "Editor"
