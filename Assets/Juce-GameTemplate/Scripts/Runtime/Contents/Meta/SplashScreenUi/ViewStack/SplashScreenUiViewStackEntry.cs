@@ -1,5 +1,5 @@
 ﻿using Juce.Core.Visibility;
-using Juce.CoreUnity.ViewStack.Entries;
+using Juce.CoreUnity.Ui.ViewStack.Entries;
 using System;
 using UnityEngine;
 

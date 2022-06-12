@@ -9,7 +9,7 @@ namespace Template.Content.Shared.Persistence
         [MenuItem("Fueler/ClearAllUserData")]
         public static void ClearAllUserData()
         {
-            string directory = SerializableDataUtils.GetPersistenceDataFolder();
+            string directory = SerializableDataUtils.GetSerializableDataDirectory();
 
             if (!Directory.Exists(directory))
             {

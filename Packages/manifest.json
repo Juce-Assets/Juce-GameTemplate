@@ -1,10 +1,10 @@
 {
   "dependencies": {
     "com.juce.utils": "git+https://github.com/Juce-Assets/Juce-Utils",
-    "com.juce.core": "git+https://github.com/Juce-Assets/Juce-Core#1.5.1",
-    "com.juce.coreunity": "git+https://github.com/Juce-Assets/Juce-CoreUnity#1.5.7",
+    "com.juce.core": "git+https://github.com/Juce-Assets/Juce-Core#1.6.3",
+    "com.juce.coreunity": "git+https://github.com/Juce-Assets/Juce-CoreUnity#1.6.0",
     "com.juce.input": "git+https://github.com/Juce-Assets/Juce-Input",
-    "com.juce.scenemanagement": "git+https://github.com/Juce-Assets/Juce-SceneManagement",
+    "com.juce.scenemanagement": "git+https://github.com/Juce-Assets/Juce-SceneManagement#1.1.2",
     "com.juce.tween": "git+https://github.com/Juce-Assets/Juce-Tween",
     "com.juce.tweencomponent": "git+https://github.com/Juce-Assets/Juce-TweenPlayer",
     "com.juce.cheats": "git+https://github.com/Juce-Assets/Juce-Cheats",
