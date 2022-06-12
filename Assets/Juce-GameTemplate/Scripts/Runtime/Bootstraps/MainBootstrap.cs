@@ -1,14 +1,13 @@
-﻿using Juce.Core.Disposables;
-using Juce.CoreUnity.Bootstraps;
+﻿using Juce.CoreUnity.Bootstraps;
 using System.Threading;
 using System.Threading.Tasks;
 using Template.Contexts.Shared.Factories;
-using Template.Contexts.LoadingScreen;
 using Juce.Core.Loading;
 using Template.Contents.Meta.SplashScreenUi.Interactor;
 using Juce.CoreUnity.Service;
 using Juce.CoreUnity.ViewStack.Services;
 using Template.Contents.Shared.Logging;
+using Template.Shared.UseCases;
 
 namespace Template.Bootstraps
 {
@@ -16,7 +15,7 @@ namespace Template.Bootstraps
     {
         protected override async Task Run(CancellationToken cancellationToken)
         {
-            ITaskLoadingToken taskLoadingToken = await SharedBootstrap.LoadCore(cancellationToken);
+            ITaskLoadingToken taskLoadingToken = await LoadCoreServicesUseCase.Execute(cancellationToken);
 
             SharedLoggers.BootstrapLogger.Log("Loading meta context");
 

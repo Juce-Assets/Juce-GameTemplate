@@ -9,15 +9,15 @@ using Template.Contexts.Services;
 using Template.Contexts.Shared.Factories;
 using UnityEngine;
 
-namespace Template.Bootstraps
+namespace Template.Shared.UseCases
 {
-    public static class SharedBootstrap
+    public static class LoadCoreServicesUseCase
     {
-        public static async Task<ITaskLoadingToken> LoadCore(CancellationToken cancellationToken)
+        public static async Task<ITaskLoadingToken> Execute(CancellationToken cancellationToken)
         {
             SharedLoggers.BootstrapLogger.Log("Starting game {0}", Application.productName);
 
-            if(JuceAppliaction.IsDebug)
+            if (JuceAppliaction.IsDebug)
             {
                 SharedLoggers.BootstrapLogger.Log("Loading debug context");
 
