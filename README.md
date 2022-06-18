@@ -8,6 +8,9 @@ Game template for rapidly jumpstarting new projects using the suite of Juce Asse
 ## Installing
 Just clone this repository. Open with Unity 2020.3.31f or similar. All the depencences are already setup on the manifest.json.
 
+## To Do
+- Add initial presistence setup.
+
 ## Contributors
 
 - Guillem SC - [@Guillemsc](https://github.com/Guillemsc)
