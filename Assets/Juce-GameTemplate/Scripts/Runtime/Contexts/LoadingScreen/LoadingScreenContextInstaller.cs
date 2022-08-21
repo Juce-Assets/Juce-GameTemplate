@@ -4,6 +4,8 @@ using Juce.CoreUnity.Contexts;
 using Juce.CoreUnity.ViewStack.Services;
 using JuceUnity.Core.DI.Extensions;
 using Template.Contents.LoadingScreen.LoadingScreenUi.Interactor;
+using Template.Contents.LoadingScreen.General.UseCases.HideLoadingScreen;
+using Template.Contents.LoadingScreen.General.UseCases.RegisterLoadingScreenToLoadingService;
 
 namespace Template.Contexts.LoadingScreen
 {
@@ -21,9 +23,20 @@ namespace Template.Contexts.LoadingScreen
                     c.Resolve<ILoadingScreenUiInteractor>()
                     ));
 
-            container.Bind<ILoadingScreenContextInteractor>().FromFunction(c => new LoadingScreenContextInteractor(
-                c.Resolve<IShowLoadingScreenUseCase>()
-                ));
+            container.Bind<IHideLoadingScreenUseCase>()
+                .FromFunction(c => new HideLoadingScreenUseCase(
+                    c.Resolve<ILoadingScreenUiInteractor>()
+                    ));
+
+            container.Bind<IRegisterLoadingScreenToLoadingServiceUseCase>()
+                .FromFunction(c => new RegisterLoadingScreenToLoadingServiceUseCase(
+                    c.Resolve<IShowLoadingScreenUseCase>(),
+                    c.Resolve<IHideLoadingScreenUseCase>()
+                    ))
+                .WhenInit(o => o.Execute)
+                .NonLazy();
+
+            container.Bind<ILoadingScreenContextInteractor>().FromInstance(new LoadingScreenContextInteractor());
         }
     }
 }

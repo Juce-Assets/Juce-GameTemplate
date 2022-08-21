@@ -1,30 +1,33 @@
-﻿using Template.Contexts.Stage;
-using Juce.Core.Disposables;
-using Juce.CoreUnity.Bootstraps;
+﻿using Juce.CoreUnity.Bootstraps;
 using System.Threading;
 using System.Threading.Tasks;
-using Template.Contexts.Shared.Factories;
-using Juce.Core.Loading;
-using Template.Contents.Shared.Logging;
 using Template.Shared.UseCases;
+using Juce.CoreUnity.Service;
+using Juce.CoreUnity.Loading.Services;
+using Template.Contexts.Stage;
+using Juce.Core.Disposables;
 
 namespace Template.Bootstraps
 {
     public sealed class StageBootstrap : Bootstrap
     {
+        private readonly CachedService<ILoadingService> loadingService;
+
         protected override async Task Run(CancellationToken cancellationToken)
         {
-            ITaskLoadingToken taskLoadingToken = await LoadCoreServicesUseCase.Execute(cancellationToken);
+            await LoadApplicationMainUseCase.Execute(cancellationToken);
 
-            SharedLoggers.BootstrapLogger.Log("Loading stage context");
+            loadingService.Value.Enqueue(
+                LoadApplicationSecondaryUseCase.Execute,
+                LoadStageUseCase.Execute
+                );
 
-            ITaskDisposable<IStageContextInteractor> stageContext = await ContextFactories.Stage.Create();
+            loadingService.Value.Enqueue(() =>
+            {
+                ITaskDisposable<IStageContextInteractor> stageContext = ServiceLocator.Get<ITaskDisposable<IStageContextInteractor>>();
 
-            stageContext.Value.Load();
-
-            await taskLoadingToken.Complete();
-
-            stageContext.Value.Start();
+                stageContext.Value.Start();
+            });
         }
     }
 }

@@ -1,19 +1,17 @@
 ﻿using Juce.Core.Disposables;
-using Juce.Core.Loading;
 using Juce.CoreUnity;
 using System.Threading;
 using System.Threading.Tasks;
 using Template.Contents.Shared.Logging;
-using Template.Contexts.LoadingScreen;
 using Template.Contexts.Services;
 using Template.Contexts.Shared.Factories;
 using UnityEngine;
 
 namespace Template.Shared.UseCases
 {
-    public static class LoadCoreServicesUseCase
+    public static class LoadApplicationMainUseCase
     {
-        public static async Task<ITaskLoadingToken> Execute(CancellationToken cancellationToken)
+        public static async Task Execute(CancellationToken cancellationToken)
         {
             SharedLoggers.BootstrapLogger.Log("Starting game {0}", Application.productName);
 
@@ -32,17 +30,7 @@ namespace Template.Shared.UseCases
 
             SharedLoggers.BootstrapLogger.Log("Loading loading screen context");
 
-            ITaskDisposable<ILoadingScreenContextInteractor> loadingScreen = await ContextFactories.LoadingScreen.Create();
-
-            ITaskLoadingToken taskLoadingToken = await loadingScreen.Value.Show(cancellationToken);
-
-            await services.Value.Load(cancellationToken);
-
-            SharedLoggers.BootstrapLogger.Log("Loading cameras context");
-
-            await ContextFactories.Cameras.Create();
-
-            return taskLoadingToken;
+            await ContextFactories.LoadingScreen.Create();
         }
     }
 }

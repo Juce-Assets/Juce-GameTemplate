@@ -1,4 +1,4 @@
-﻿using Juce.Core.Loading;
+﻿using Juce.Core.Loading.Tokens;
 using Juce.CoreUnity.ViewStack.Services;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,15 +20,11 @@ namespace Template.Contents.LoadingScreen.General.UseCases.ShowLoadingScreen
             this.loadingScreenUiInteractor = loadingScreenUiInteractor;
         }
 
-        public async Task<ITaskLoadingToken> Execute(CancellationToken cancellationToken)
+        public async Task Execute(CancellationToken cancellationToken)
         {
             await uiViewStackService.New().CurrentSetInteractable(false).Execute(cancellationToken);
 
             await loadingScreenUiInteractor.SetVisible(visibe: true, cancellationToken);
-
-            return new TaskCallbackLoadingToken(
-                () => loadingScreenUiInteractor.SetVisible(visibe: false, cancellationToken)
-                );
         }
     }
 }

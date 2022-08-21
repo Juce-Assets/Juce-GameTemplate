@@ -1,5 +1,6 @@
 ﻿using Juce.Core.Di.Builder;
 using Juce.CoreUnity.Contexts;
+using Juce.CoreUnity.Loading.Services;
 using Juce.CoreUnity.Localization.Services;
 using Juce.CoreUnity.Tickables;
 using Juce.CoreUnity.ViewStack.Services;
@@ -15,6 +16,11 @@ namespace Template.Contexts.Services
     {
         public void Install(IDiContainerBuilder container, ServicesContextInstance context)
         {
+            container.Bind<ILoadingService>()
+                .FromInstance(new LoadingService())
+                .ToServicesLocator()
+                .NonLazy();
+
             container.Bind<ITickablesService>()
                 .FromInstance(context.TickablesService)
                 .ToServicesLocator()
