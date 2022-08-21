@@ -1,6 +1,6 @@
 ﻿using Juce.Core.Di.Builder;
+using Juce.CoreUnity.Di.Extensions;
 using Juce.CoreUnity.ViewStack.Services;
-using JuceUnity.Core.DI.Extensions;
 using Template.Contents.Services.Configuration.Service;
 
 namespace Template.Contents.Meta.General.Installers

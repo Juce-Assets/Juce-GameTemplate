@@ -1,59 +1,5 @@
 {
   "dependencies": {
-    "com.juce.cheats": {
-      "version": "git+https://github.com/Juce-Assets/Juce-Cheats",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "23deafec54732c7de41283e78919c25a32eb2b41"
-    },
-    "com.juce.core": {
-      "version": "git+https://github.com/Juce-Assets/Juce-Core#1.6.8",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "6d7bfadc507dd827ce3c27069e09cea3a59e5f96"
-    },
-    "com.juce.coreunity": {
-      "version": "git+https://github.com/Juce-Assets/Juce-CoreUnity#1.6.15",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.juce.core": "https://github.com/Juce-Assets/Juce-Core"
-      },
-      "hash": "2e895b1833e5ab685766368963c6af05c6d0698a"
-    },
-    "com.juce.input": {
-      "version": "git+https://github.com/Juce-Assets/Juce-Input",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "3e144bd4324bc448ad916c5c84e4d78477e9000c"
-    },
-    "com.juce.tween": {
-      "version": "git+https://github.com/Juce-Assets/Juce-Tween#1.6.10",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "82e04cb34ba51b94314f552472a550e048e73a7b"
-    },
-    "com.juce.tweencomponent": {
-      "version": "git+https://github.com/Juce-Assets/Juce-TweenPlayer#1.5.10",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.juce.utils": "https://github.com/Juce-Assets/Juce-Utils",
-        "com.juce.tween": "https://github.com/Juce-Assets/Juce-Tween"
-      },
-      "hash": "8f6df9fb410b06f9b4219ac2743a656365da71f3"
-    },
-    "com.juce.utils": {
-      "version": "git+https://github.com/Juce-Assets/Juce-Utils#1.4.6",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "18a68616160e2c2ff6a99d6a0fac4cd20fd86e3c"
-    },
     "com.unity.2d.animation": {
       "version": "5.2.0",
       "depth": 0,
