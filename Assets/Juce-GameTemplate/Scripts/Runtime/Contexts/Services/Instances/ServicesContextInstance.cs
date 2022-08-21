@@ -1,4 +1,4 @@
-﻿using Juce.CoreUnity.Tickables;
+﻿using Juce.CoreUnity.Tick.Services;
 using Juce.CoreUnity.Ui.Frame;
 using Template.Contents.Shared.Configuration;
 using UnityEngine;

@@ -12,7 +12,7 @@ namespace Template.Shared.UseCases
     {
         public static async Task Execute(CancellationToken cancellationToken)
         {
-            ITaskDisposable<IServicesContextInteractor> services = ServiceLocator.Get<ITaskDisposable<IServicesContextInteractor>>();
+            IAsyncDisposable<IServicesContextInteractor> services = ServiceLocator.Get<IAsyncDisposable<IServicesContextInteractor>>();
 
             await services.Value.Load(cancellationToken);
 

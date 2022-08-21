@@ -15,7 +15,7 @@ namespace Template.Contents.LoadingScreen.General.UseCases.HideLoadingScreen
             this.loadingScreenUiInteractor = loadingScreenUiInteractor;
         }
 
-        public Task Execute(CancellationToken cancellationToken)
+        public Task Execute(bool instantly, CancellationToken cancellationToken)
         {
             return loadingScreenUiInteractor.SetVisible(false, cancellationToken);
         }

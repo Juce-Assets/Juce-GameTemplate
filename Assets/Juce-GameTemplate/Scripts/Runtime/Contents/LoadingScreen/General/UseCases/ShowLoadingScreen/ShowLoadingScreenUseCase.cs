@@ -20,7 +20,7 @@ namespace Template.Contents.LoadingScreen.General.UseCases.ShowLoadingScreen
             this.loadingScreenUiInteractor = loadingScreenUiInteractor;
         }
 
-        public async Task Execute(CancellationToken cancellationToken)
+        public async Task Execute(bool instantly, CancellationToken cancellationToken)
         {
             await uiViewStackService.New().CurrentSetInteractable(false).Execute(cancellationToken);
 

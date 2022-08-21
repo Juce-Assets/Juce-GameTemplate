@@ -17,17 +17,17 @@ namespace Template.Bootstraps
         {
             await LoadApplicationMainUseCase.Execute(cancellationToken);
 
-            loadingService.Value.Enqueue(
-                LoadApplicationSecondaryUseCase.Execute,
-                LoadStageUseCase.Execute
-                );
+            loadingService.Value.New()
+                .Enqueue(
+                    LoadApplicationSecondaryUseCase.Execute,
+                    LoadStageUseCase.Execute
+                )
+                .Enqueue(() =>
+                {
+                    IAsyncDisposable<IStageContextInteractor> stageContext = ServiceLocator.Get<IAsyncDisposable<IStageContextInteractor>>();
 
-            loadingService.Value.Enqueue(() =>
-            {
-                ITaskDisposable<IStageContextInteractor> stageContext = ServiceLocator.Get<ITaskDisposable<IStageContextInteractor>>();
-
-                stageContext.Value.Start();
-            });
+                    stageContext.Value.Start();
+                });
         }
     }
 }

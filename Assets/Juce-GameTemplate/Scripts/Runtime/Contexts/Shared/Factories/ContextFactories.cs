@@ -22,12 +22,12 @@ namespace Template.Contexts.Shared.Factories
         {
             Debug = new ContextFactory<IDebugContextInteractor, DebugContextInstance>(
                 "DebugContext",
-                new DebugContextInstaller()
+                default
                 );
 
             Services = new ContextFactory<IServicesContextInteractor, ServicesContextInstance>(
                 "ServicesContext",
-                new ServicesContextInstaller()
+                default
                 );
  
              Cameras = new ContextFactory<ICamerasContextInteractor, CamerasContextInstance>(

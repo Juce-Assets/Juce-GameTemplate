@@ -1,7 +1,7 @@
 ﻿using Juce.Core.Di.Builder;
-using Juce.CoreUnity.Tickables;
+using Juce.CoreUnity.Di.Extensions;
+using Juce.CoreUnity.Tick.Services;
 using Juce.CoreUnity.ViewStack.Services;
-using JuceUnity.Core.DI.Extensions;
 using Template.Contents.Services.Configuration.Service;
 
 namespace Template.Contents.Stage.General.Installers

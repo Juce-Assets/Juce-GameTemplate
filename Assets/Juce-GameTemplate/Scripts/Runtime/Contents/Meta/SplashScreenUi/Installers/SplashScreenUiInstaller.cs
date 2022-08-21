@@ -1,8 +1,8 @@
 ﻿using Juce.Core.Di.Builder;
 using Juce.Core.Di.Installers;
+using Juce.CoreUnity.Di.Extensions;
 using Juce.CoreUnity.TweenComponent;
 using Juce.CoreUnity.Visibles;
-using JuceUnity.Core.Di.Extensions;
 using Template.Contents.Meta.SplashScreenUi.Interactor;
 using Template.Contents.Meta.SplashScreenUi.ViewStack;
 using UnityEngine;

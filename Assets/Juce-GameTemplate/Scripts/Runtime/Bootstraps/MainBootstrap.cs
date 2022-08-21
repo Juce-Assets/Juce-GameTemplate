@@ -1,13 +1,13 @@
 ﻿using Juce.CoreUnity.Bootstraps;
 using System.Threading;
 using System.Threading.Tasks;
-using Template.Contents.Meta.SplashScreenUi.Interactor;
 using Juce.CoreUnity.Service;
-using Juce.CoreUnity.ViewStack.Services;
-using Template.Contents.Shared.Logging;
-using Template.Shared.UseCases;
 using Juce.CoreUnity.Loading.Services;
-using Juce.Core.Extensions;
+using Juce.Core.Contexts;
+using Template.Contexts.Debug.General.Context;
+using Juce.CoreUnity;
+using Template.Contexts.Services.General.Context;
+using Template.Shared.UseCases;
 
 namespace Template.Bootstraps
 {
@@ -17,24 +17,36 @@ namespace Template.Bootstraps
 
         protected override async Task Run(CancellationToken cancellationToken)
         {
-            await LoadApplicationMainUseCase.Execute(cancellationToken);
+            IContextsService contextsService = new ContextsService();
+            ServiceLocator.Register(contextsService);
 
-            loadingService.Value.Enqueue(
-                LoadApplicationSecondaryUseCase.Execute,
-                LoadMetaUseCase.Execute
-                );
+            contextsService.Add(new DebugContext());
+            contextsService.Add(new ServicesContext());
 
-            loadingService.Value.Enqueue(() =>
+            if (JuceAppliaction.IsDebug)
             {
-                SharedLoggers.BootstrapLogger.Log("Starting game");
+                await contextsService.Load<DebugContext>(NopContextData.Instance, cancellationToken);
+            }
 
-                IUiViewStackService uiViewStackService = ServiceLocator.Get<IUiViewStackService>();
+            await contextsService.Load<ServicesContext>(NopContextData.Instance, cancellationToken);
 
-                uiViewStackService.New()
-                    .Show<ISplashScreenUiInteractor>(instantly: false)
-                    .Hide<ISplashScreenUiInteractor>(instantly: false)
-                    .Execute(cancellationToken).RunAsync();
-            });
+                //loadingService.Value.New()
+                //.Enqueue(
+                //    LoadApplicationSecondaryUseCase.Execute,
+                //    LoadMetaUseCase.Execute
+                //)
+                //.Enqueue(() =>
+                //{
+                //    SharedLoggers.BootstrapLogger.Log("Starting game");
+
+                //    IUiViewStackService uiViewStackService = ServiceLocator.Get<IUiViewStackService>();
+
+                //    uiViewStackService.New()
+                //        .Show<ISplashScreenUiInteractor>(instantly: false)
+                //        .Hide<ISplashScreenUiInteractor>(instantly: false)
+                //        .Execute(cancellationToken).RunAsync();
+                //})
+                //.Execute();
         }
     }
 }

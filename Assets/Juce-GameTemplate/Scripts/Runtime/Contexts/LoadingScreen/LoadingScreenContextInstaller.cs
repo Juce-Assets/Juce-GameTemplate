@@ -2,10 +2,10 @@
 using Juce.Core.Di.Builder;
 using Juce.CoreUnity.Contexts;
 using Juce.CoreUnity.ViewStack.Services;
-using JuceUnity.Core.DI.Extensions;
 using Template.Contents.LoadingScreen.LoadingScreenUi.Interactor;
 using Template.Contents.LoadingScreen.General.UseCases.HideLoadingScreen;
 using Template.Contents.LoadingScreen.General.UseCases.RegisterLoadingScreenToLoadingService;
+using Juce.CoreUnity.Di.Extensions;
 
 namespace Template.Contexts.LoadingScreen
 {

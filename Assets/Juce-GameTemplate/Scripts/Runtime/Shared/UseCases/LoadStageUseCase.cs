@@ -13,7 +13,7 @@ namespace Template.Shared.UseCases
         {
             SharedLoggers.BootstrapLogger.Log("Loading stage context");
 
-            ITaskDisposable<IStageContextInteractor> stageContext = await ContextFactories.Stage.Create();
+            IAsyncDisposable<IStageContextInteractor> stageContext = await ContextFactories.Stage.Create();
 
             stageContext.Value.Load();
         }

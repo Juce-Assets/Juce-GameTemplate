@@ -5,6 +5,6 @@ namespace Template.Contents.LoadingScreen.General.UseCases.HideLoadingScreen
 {
     public interface IHideLoadingScreenUseCase
     {
-        Task Execute(CancellationToken cancellationToken);
+        Task Execute(bool instantly, CancellationToken cancellationToken);
     }
 }

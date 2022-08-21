@@ -13,9 +13,9 @@ namespace Template.Shared.UseCases
         {
             SharedLoggers.BootstrapLogger.Log("Unloading stage context");
 
-            ITaskDisposable<IStageContextInteractor> stageContext = ServiceLocator.Get<ITaskDisposable<IStageContextInteractor>>();
+            IAsyncDisposable<IStageContextInteractor> stageContext = ServiceLocator.Get<IAsyncDisposable<IStageContextInteractor>>();
 
-            await stageContext.Dispose();
+            await stageContext.DisposeAsync();
         }
     }
 }
