@@ -16,3 +16,6 @@
 [submodule "Assets/Juce/Juce-Cheats"]
 	path = Assets/Juce/Juce-Cheats
 	url = https://github.com/Juce-Assets/Juce-Cheats
+[submodule "Assets/Juce/Juce-Input"]
+	path = Assets/Juce/Juce-Input
+	url = https://github.com/Juce-Assets/Juce-Input
