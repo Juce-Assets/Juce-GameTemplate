@@ -1,3 +1,6 @@
 [submodule "Assets/Juce/Juce-Utils"]
 	path = Assets/Juce/Juce-Utils
 	url = https://github.com/Juce-Assets/Juce-Utils
+[submodule "Assets/Juce/Juce-Core"]
+	path = Assets/Juce/Juce-Core
+	url = https://github.com/Juce-Assets/Juce-Core
