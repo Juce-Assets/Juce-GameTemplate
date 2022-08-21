@@ -10,3 +10,9 @@
 [submodule "Assets/Juce/Juce-Tween"]
 	path = Assets/Juce/Juce-Tween
 	url = https://github.com/Juce-Assets/Juce-Tween
+[submodule "Assets/Juce/Juce-TweenPlayer"]
+	path = Assets/Juce/Juce-TweenPlayer
+	url = https://github.com/Juce-Assets/Juce-TweenPlayer
+[submodule "Assets/Juce/Juce-Cheats"]
+	path = Assets/Juce/Juce-Cheats
+	url = https://github.com/Juce-Assets/Juce-Cheats
