@@ -1,5 +1,5 @@
 ﻿
-namespace Template.Contexts.Debug
+namespace Template.Contexts.Debug.General.Constants
 {
     public static class DebugSceneConstants
     {

@@ -2,7 +2,7 @@
 using Juce.Core.Di.Installers;
 using UnityEngine;
 
-namespace Template.Contexts.Debug
+namespace Template.Contexts.Debug.General.Instances
 {
     public sealed class DebugContextInstance : MonoBehaviour, IInstaller
     {
