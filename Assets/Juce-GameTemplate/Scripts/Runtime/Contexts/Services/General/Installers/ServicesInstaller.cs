@@ -8,6 +8,7 @@ using Juce.CoreUnity.Ui.Frame;
 using Juce.CoreUnity.ViewStack.Services;
 using Template.Contexts.Shared.Configuration;
 using Template.Contexts.Services.Configuration.Service;
+using Template.Contexts.Services.Persistence.Service;
 
 namespace Template.Contexts.Services.General.Installers
 {
@@ -17,33 +18,32 @@ namespace Template.Contexts.Services.General.Installers
         {
             container.Bind<ILoadingService>()
                 .FromInstance(new LoadingService())
-                .ToServicesLocator()
-                .NonLazy();
+                .ToServicesLocator();
 
             container.Bind<ITickablesService>()
                 .FromFunction(c => c.Resolve<TickablesService>())
-                .ToServicesLocator()
-                .NonLazy();
+                .ToServicesLocator();
 
             container.Bind<IUiViewStackService>()
                 .FromFunction(c => new UiViewStackService(
                      c.Resolve<IUiFrame>()
                     ))
-                .ToServicesLocator()
-                .NonLazy();
+                .ToServicesLocator();
 
             container.Bind<ILocalizationService>()
                 .FromInstance(new LocalizationService(
                     ))
-                .ToServicesLocator()
-                .NonLazy();
+                .ToServicesLocator();
 
             container.Bind<IConfigurationService>()
                 .FromFunction(c => new ConfigurationService(
                     c.Resolve<GameConfiguration>()
                     ))
-                .ToServicesLocator()
-                .NonLazy();
+                .ToServicesLocator();
+
+            container.Bind<IPersistenceService>()
+                .FromInstance(new PersistenceService())
+                .ToServicesLocator();
         }
     }
 }

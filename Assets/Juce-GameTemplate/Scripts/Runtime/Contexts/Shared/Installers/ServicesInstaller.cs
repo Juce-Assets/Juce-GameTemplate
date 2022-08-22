@@ -3,6 +3,7 @@ using Juce.CoreUnity.Di.Extensions;
 using Juce.CoreUnity.Tick.Services;
 using Juce.CoreUnity.ViewStack.Services;
 using Template.Contexts.Services.Configuration.Service;
+using Template.Contexts.Services.Persistence.Service;
 
 namespace Template.Contents.Shared.General.Installers
 {
@@ -13,6 +14,7 @@ namespace Template.Contents.Shared.General.Installers
             container.Bind<ITickablesService>().FromServicesLocator();
             container.Bind<IUiViewStackService>().FromServicesLocator();
             container.Bind<IConfigurationService>().FromServicesLocator();
+            container.Bind<IPersistenceService>().FromServicesLocator();
         }
     }
 }

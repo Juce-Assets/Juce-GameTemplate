@@ -2,6 +2,7 @@
 using Juce.CoreUnity.Localization.Services;
 using Template.Contexts.Services.General.Interactors;
 using Template.Contexts.Services.General.UseCases;
+using Template.Contexts.Services.Persistence.Service;
 
 namespace Template.Contexts.Services.General.Installers
 {
@@ -11,7 +12,8 @@ namespace Template.Contexts.Services.General.Installers
         {
             container.Bind<LoadUseCase>()
                 .FromFunction(c => new LoadUseCase(
-                    c.Resolve<ILocalizationService>()
+                    c.Resolve<ILocalizationService>(),
+                    c.Resolve<IPersistenceService>()
                     ));
 
             container.Bind<IServicesContextInteractor>()
