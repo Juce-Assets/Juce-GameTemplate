@@ -3,14 +3,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using Juce.CoreUnity.Service;
 using Juce.CoreUnity.Loading.Services;
+using Juce.CoreUnity;
 using Juce.Core.Contexts;
 using Template.Contexts.Debug.General.Context;
-using Juce.CoreUnity;
 using Template.Contexts.Services.General.Context;
 using Template.Contexts.LoadingScreen.General.Context;
 using Template.Contexts.Meta.General.Context;
 using Template.Contexts.Cameras.General.Context;
 using Template.Contexts.Stage.General.Context;
+using Template.Contexts.Shared.Logging;
 
 namespace Template.Bootstraps
 {
@@ -18,6 +19,8 @@ namespace Template.Bootstraps
     {
         protected override async Task Run(CancellationToken cancellationToken)
         {
+            SharedLoggers.BootstrapLogger.Log("Starting MainBootstrap");
+
             IContextsService contextsService = new ContextsService();
             ServiceLocator.Register(contextsService);
 

@@ -7,6 +7,8 @@ namespace Template.Contexts.Shared.Logging
     public static class SharedLoggers
     {
         public static ILogger BootstrapLogger { get; }
+        public static ILogger DebugLogger { get; }
+        public static ILogger LoadingScreenLogger { get; }
         public static ILogger ServicesLogger { get; }
         public static ILogger MetaLogger { get; }
         public static ILogger StageLogger { get; }
@@ -14,6 +16,8 @@ namespace Template.Contexts.Shared.Logging
         static SharedLoggers()
         {
             BootstrapLogger = CreateLogger("Bootstrap");
+            DebugLogger = CreateLogger("Debug");
+            LoadingScreenLogger = CreateLogger("LoadingScreen");
             ServicesLogger = CreateLogger("Services");
             MetaLogger = CreateLogger("Meta");
             StageLogger = CreateLogger("Stage");

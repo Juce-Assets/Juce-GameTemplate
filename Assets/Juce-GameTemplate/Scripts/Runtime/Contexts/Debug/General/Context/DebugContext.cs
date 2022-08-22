@@ -7,6 +7,7 @@ using Template.Contexts.Debug.General.Constants;
 using Template.Contexts.Debug.General.Installers;
 using Template.Contexts.Debug.General.Instances;
 using Template.Contexts.Debug.General.Interactor;
+using Template.Contexts.Shared.Logging;
 
 namespace Template.Contexts.Debug.General.Context
 {
@@ -21,6 +22,8 @@ namespace Template.Contexts.Debug.General.Context
                 false,
                 new DebugContextInstaller()
                 ).Install();
+
+            SharedLoggers.DebugLogger.Log("Context Loaded");
         }
 
         public void Start()
@@ -31,6 +34,8 @@ namespace Template.Contexts.Debug.General.Context
         public async Task DisposeAsync()
         {
             await interactor.DisposeAsync();
+
+            SharedLoggers.DebugLogger.Log("Context Unloaded");
         }
     }
 }

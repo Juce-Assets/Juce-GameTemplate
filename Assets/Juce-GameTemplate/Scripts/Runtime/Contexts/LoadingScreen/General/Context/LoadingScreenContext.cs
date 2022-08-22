@@ -7,6 +7,7 @@ using Template.Contexts.LoadingScreen.General.Constants;
 using Template.Contexts.LoadingScreen.General.Installers;
 using Template.Contexts.LoadingScreen.General.Instances;
 using Template.Contexts.LoadingScreen.General.Interactors;
+using Template.Contexts.Shared.Logging;
 
 namespace Template.Contexts.LoadingScreen.General.Context
 {
@@ -21,6 +22,8 @@ namespace Template.Contexts.LoadingScreen.General.Context
                 false,
                 new LoadingScreenContextInstaller()
                 ).Install();
+
+            SharedLoggers.LoadingScreenLogger.Log("Context Loaded");
         }
 
         public void Start()
@@ -31,6 +34,8 @@ namespace Template.Contexts.LoadingScreen.General.Context
         public async Task DisposeAsync()
         {
             await interactor.DisposeAsync();
+
+            SharedLoggers.LoadingScreenLogger.Log("Context Unloaded");
         }
     }
 }

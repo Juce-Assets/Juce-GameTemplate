@@ -7,6 +7,7 @@ using Template.Contexts.Services.General.Constants;
 using Template.Contexts.Services.General.Installers;
 using Template.Contexts.Services.General.Instances;
 using Template.Contexts.Services.General.Interactors;
+using Template.Contexts.Shared.Logging;
 
 namespace Template.Contexts.Services.General.Context
 {
@@ -23,6 +24,8 @@ namespace Template.Contexts.Services.General.Context
                 ).Install();
 
             await interactor.Value.Load(cancellationToken);
+
+            SharedLoggers.ServicesLogger.Log("Context Loaded");
         }
 
         public void Start()
@@ -33,6 +36,8 @@ namespace Template.Contexts.Services.General.Context
         public async Task DisposeAsync()
         {
             await interactor.DisposeAsync();
+
+            SharedLoggers.ServicesLogger.Log("Context Unloaded");
         }
     }
 }

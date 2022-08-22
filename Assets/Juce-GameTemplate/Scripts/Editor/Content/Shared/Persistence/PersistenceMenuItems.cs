@@ -2,7 +2,7 @@ using Juce.CoreUnity.Persistence.Serialization;
 using System.IO;
 using UnityEditor;
 
-namespace Template.Content.Shared.Persistence
+namespace Template.Contexts.Shared.Persistence
 {
     public static class PersistenceMenuItems
     {

@@ -1,5 +1,4 @@
 ﻿using Juce.Core.Di.Builder;
-using Juce.Core.Di.Installers;
 using Juce.CoreUnity.Di.Extensions;
 using Juce.CoreUnity.Loading.Services;
 using Juce.CoreUnity.Localization.Services;

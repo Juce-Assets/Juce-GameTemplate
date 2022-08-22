@@ -7,6 +7,7 @@ using Template.Contexts.Meta.General.Constants;
 using Template.Contexts.Meta.General.Installers;
 using Template.Contexts.Meta.General.Instances;
 using Template.Contexts.Meta.General.Interactors;
+using Template.Contexts.Shared.Logging;
 
 namespace Template.Contexts.Meta.General.Context
 {
@@ -21,16 +22,22 @@ namespace Template.Contexts.Meta.General.Context
                 false,
                 new MetaContextInstaller()
                 ).Install();
+
+            SharedLoggers.MetaLogger.Log("Context Loaded");
         }
 
         public void Start()
         {
             interactor.Value.Start();
+
+            SharedLoggers.MetaLogger.Log("Context Started");
         }
 
         public async Task DisposeAsync()
         {
             await interactor.DisposeAsync();
+
+            SharedLoggers.MetaLogger.Log("Context Unloaded");
         }
     }
 }
