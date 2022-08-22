@@ -4,10 +4,12 @@ using Juce.CoreUnity.Di.Extensions;
 using Juce.CoreUnity.Loading.Services;
 using Juce.CoreUnity.Localization.Services;
 using Juce.CoreUnity.Tick.Services;
+using Juce.CoreUnity.Ui.Frame;
 using Juce.CoreUnity.ViewStack.Services;
 using Template.Contents.Services.Configuration.Service;
 using Template.Contents.Services.General.Installers;
 using Template.Contents.Services.General.UseCases.LoadServices;
+using Template.Contents.Shared.Configuration;
 
 namespace Template.Contexts.Services
 {
@@ -21,13 +23,13 @@ namespace Template.Contexts.Services
                 .NonLazy();
 
             container.Bind<ITickablesService>()
-                .FromFunction(c => c.Resolve<ServicesContextInstance>().TickablesService)
+                .FromFunction(c => c.Resolve<TickablesService>())
                 .ToServicesLocator()
                 .NonLazy();
 
             container.Bind<IUiViewStackService>()
                 .FromFunction(c => new UiViewStackService(
-                     c.Resolve<ServicesContextInstance>().UiFrame
+                     c.Resolve<IUiFrame>()
                     ))
                 .ToServicesLocator()
                 .NonLazy();
@@ -40,7 +42,7 @@ namespace Template.Contexts.Services
 
             container.Bind<IConfigurationService>()
                 .FromFunction(c => new ConfigurationService(
-                    c.Resolve<ServicesContextInstance>().GameConfiguration
+                    c.Resolve<GameConfiguration>()
                     ))
                 .ToServicesLocator()
                 .NonLazy();

@@ -32,22 +32,22 @@ namespace Template.Contexts.Shared.Factories
  
              Cameras = new ContextFactory<ICamerasContextInteractor, CamerasContextInstance>(
                 "CamerasContext",
-                new CamerasContextInstaller()
+                default
                 );
 
              LoadingScreen = new ContextFactory<ILoadingScreenContextInteractor, LoadingScreenContextInstance>(
                 "LoadingScreenContext",
-                new LoadingScreenContextInstaller()
+                default
                 );
 
              Meta = new ContextFactory<IMetaContextInteractor, MetaContextInstance>(
                 "MetaContext",
-                new MetaContextInstaller()
+                default
                 );
 
             Stage = new ContextFactory<IStageContextInteractor, StageContextInstance>(
                 "StageContext",
-                new StageContextInstaller()
+                default
                 );
         }
     }

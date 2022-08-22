@@ -1,11 +1,13 @@
-﻿using Juce.CoreUnity.Tick.Services;
+﻿using Juce.Core.Di.Builder;
+using Juce.Core.Di.Installers;
+using Juce.CoreUnity.Tick.Services;
 using Juce.CoreUnity.Ui.Frame;
 using Template.Contents.Shared.Configuration;
 using UnityEngine;
 
 namespace Template.Contexts.Services
 {
-    public sealed class ServicesContextInstance : MonoBehaviour
+    public sealed class ServicesContextInstance : MonoBehaviour, IInstaller
     {
         [Header("Configuration")]
         [SerializeField] private GameConfiguration gameConfiguraton = default;
@@ -14,9 +16,11 @@ namespace Template.Contexts.Services
         [SerializeField] private TickablesService tickablesService = default;
         [SerializeField] private UiFrame uiFrame = default;
 
-        public GameConfiguration GameConfiguration => gameConfiguraton;
-
-        public ITickablesService TickablesService => tickablesService;
-        public UiFrame UiFrame => uiFrame;
+        public void Install(IDiContainerBuilder container)
+        {
+            container.Bind<TickablesService>().FromInstance(tickablesService);
+            container.Bind<IUiFrame>().FromInstance(uiFrame);
+            container.Bind<GameConfiguration>().FromInstance(gameConfiguraton);
+        }
     }
 }

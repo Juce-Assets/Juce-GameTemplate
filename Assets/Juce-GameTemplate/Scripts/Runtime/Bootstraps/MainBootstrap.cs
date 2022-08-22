@@ -7,14 +7,15 @@ using Juce.Core.Contexts;
 using Template.Contexts.Debug.General.Context;
 using Juce.CoreUnity;
 using Template.Contexts.Services.General.Context;
-using Template.Shared.UseCases;
+using Template.Contexts.LoadingScreen.General.Context;
+using Template.Contexts.Meta.General.Context;
+using Template.Contexts.Cameras.General.Context;
+using Template.Contexts.Stage.General.Context;
 
 namespace Template.Bootstraps
 {
     public sealed class MainBootstrap : Bootstrap
     {
-        private readonly CachedService<ILoadingService> loadingService;
-
         protected override async Task Run(CancellationToken cancellationToken)
         {
             IContextsService contextsService = new ContextsService();
@@ -22,31 +23,25 @@ namespace Template.Bootstraps
 
             contextsService.Add(new DebugContext());
             contextsService.Add(new ServicesContext());
+            contextsService.Add(new LoadingScreenContext());
+            contextsService.Add(new CamerasContext());
+            contextsService.Add(new MetaContext());
+            contextsService.Add(new StageContext());
 
             if (JuceAppliaction.IsDebug)
             {
-                await contextsService.Load<DebugContext>(NopContextData.Instance, cancellationToken);
+                await contextsService.Load<DebugContext>(cancellationToken);
             }
 
-            await contextsService.Load<ServicesContext>(NopContextData.Instance, cancellationToken);
+            await contextsService.Load<ServicesContext>(cancellationToken);
+            await contextsService.Load<LoadingScreenContext>(cancellationToken);
 
-                //loadingService.Value.New()
-                //.Enqueue(
-                //    LoadApplicationSecondaryUseCase.Execute,
-                //    LoadMetaUseCase.Execute
-                //)
-                //.Enqueue(() =>
-                //{
-                //    SharedLoggers.BootstrapLogger.Log("Starting game");
-
-                //    IUiViewStackService uiViewStackService = ServiceLocator.Get<IUiViewStackService>();
-
-                //    uiViewStackService.New()
-                //        .Show<ISplashScreenUiInteractor>(instantly: false)
-                //        .Hide<ISplashScreenUiInteractor>(instantly: false)
-                //        .Execute(cancellationToken).RunAsync();
-                //})
-                //.Execute();
+            ServiceLocator.Get<ILoadingService>().New()
+                .ShowInstantly()
+                .Enqueue(contextsService.Load<CamerasContext>)
+                .Enqueue(contextsService.Load<MetaContext>)
+                .EnqueueAfterLoad(contextsService.StartCurrent)
+                .Execute();
         }
     }
 }

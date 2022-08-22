@@ -1,9 +1,14 @@
-﻿using UnityEngine;
+﻿using Juce.Core.Di.Builder;
+using Juce.Core.Di.Installers;
+using UnityEngine;
 
 namespace Template.Contexts.Debug
 {
-    public sealed class DebugContextInstance : MonoBehaviour
+    public sealed class DebugContextInstance : MonoBehaviour, IInstaller
     {
-
+        public void Install(IDiContainerBuilder container)
+        {
+            
+        }
     }
 }

@@ -14,8 +14,6 @@ namespace Template.Shared.UseCases
             SharedLoggers.BootstrapLogger.Log("Loading stage context");
 
             IAsyncDisposable<IStageContextInteractor> stageContext = await ContextFactories.Stage.Create();
-
-            stageContext.Value.Load();
         }
     }
 }
